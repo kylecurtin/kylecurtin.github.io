@@ -3,196 +3,520 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kyle Curtin — Responsible Finance · AI Agents</title>
-  <meta name="description" content="Kyle Curtin — Multi-Strategy Associate at SLR (Malk). Investment due diligence, annual reporting, fund advisory, and AI agent development." />
+  <title>Kyle Curtin — An Annual Report</title>
+  <meta name="description" content="Kyle Curtin — Senior Associate at Malk, part of SLR. Responsible finance, sustainability strategy, and the practice of building AI agents." />
   <meta name="author" content="Kyle Curtin" />
-  <meta property="og:title" content="Kyle Curtin — Responsible Finance · AI Agents" />
-  <meta property="og:description" content="Multi-Strategy Associate at SLR (Malk). Investment due diligence, annual reporting, fund advisory, and AI agent development." />
+  <meta name="theme-color" content="#f4ecdd" />
+  <meta property="og:title" content="Kyle Curtin — An Annual Report" />
+  <meta property="og:description" content="Senior Associate at Malk, part of SLR. Responsible finance, sustainability, and the practice of building AI agents." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kylecurtin.github.io" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23f4ecdd'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia,serif' font-size='36' font-weight='600' fill='%231f3a2e'%3EKC%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="wrap">
-      <a href="#top" class="mark">KC</a>
-      <nav aria-label="Primary">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#ai">AI</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+
+  <!-- Paper grain texture overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Masthead -->
+  <header class="masthead" id="top">
+    <div class="masthead-rule"></div>
+    <div class="masthead-row mono">
+      <span class="m-cell">№ I · MMXXVI</span>
+      <span class="m-cell m-title">An Annual Report of K. Curtin</span>
+      <span class="m-cell m-right">New York · 140 W End Ave</span>
     </div>
+    <div class="masthead-rule"></div>
   </header>
 
-  <main id="top">
+  <!-- Floating chapter index -->
+  <nav class="folio" aria-label="Chapter index">
+    <ol>
+      <li><a href="#letter"      data-target="letter"><span class="folio-num">01</span><span class="folio-label">Letter</span></a></li>
+      <li><a href="#practice"    data-target="practice"><span class="folio-num">02</span><span class="folio-label">Practice</span></a></li>
+      <li><a href="#studio"      data-target="studio"><span class="folio-num">03</span><span class="folio-label">Studio</span></a></li>
+      <li><a href="#engagements" data-target="engagements"><span class="folio-num">04</span><span class="folio-label">Engagements</span></a></li>
+      <li><a href="#curriculum"  data-target="curriculum"><span class="folio-num">05</span><span class="folio-label">Curriculum</span></a></li>
+      <li><a href="#field"       data-target="field"><span class="folio-num">06</span><span class="folio-label">Field&nbsp;Notes</span></a></li>
+      <li><a href="#correspond"  data-target="correspond"><span class="folio-num">07</span><span class="folio-label">Correspondence</span></a></li>
+    </ol>
+  </nav>
 
-    <section class="hero">
+  <main>
+
+    <!-- ─────────── COVER ─────────── -->
+    <section class="cover" aria-label="Cover">
       <div class="wrap">
-        <p class="eyebrow">Responsible Finance · AI Agents · New York</p>
-        <h1>Kyle Curtin</h1>
-        <p class="lede">
-          Multi-Strategy Associate at <strong>SLR (Malk)</strong>, working with the firm's largest and most complex fund clients on investment due diligence, annual reporting, and fund advisory — while leading internal AI agent development.
+        <p class="kicker mono reveal" style="--d:.05s">
+          <span>Set in Fraunces &amp; IBM Plex</span>
+          <span class="dot">·</span>
+          <span>An annual report</span>
+          <span class="dot">·</span>
+          <span>Vol. I, May MMXXVI</span>
         </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#contact">Get in touch</a>
-          <a class="btn btn-ghost" href="#experience">See experience</a>
+
+        <h1 class="cover-title">
+          <span class="line reveal" style="--d:.15s">Kyle</span>
+          <span class="line reveal" style="--d:.30s">Curtin<span class="period">.</span></span>
+        </h1>
+
+        <p class="deck reveal" style="--d:.55s">
+          A working report on <em>responsible finance</em>, sustainability strategy, and the practice of building AI agents — written from the desk of a <strong>Senior Associate</strong> at <strong>Malk, part of SLR</strong>.
+        </p>
+
+        <div class="ticker reveal" style="--d:.75s">
+          <div class="t-item">
+            <span class="figure"><span class="sym">$</span>33.5<span class="suf">M</span></span>
+            <span class="caption mono">Cost savings delivered for a <span class="hi">$1.5B</span> PE-owned cybersecurity portfolio company at <strong>KPMG</strong></span>
+          </div>
+          <div class="t-item">
+            <span class="figure"><span class="sym">$</span>7.5<span class="suf">B</span></span>
+            <span class="caption mono">Public metals &amp; mining annual sustainability report published with <strong>AccountAbility</strong></span>
+          </div>
+          <div class="t-item">
+            <span class="figure">223</span>
+            <span class="caption mono">M&amp;A transactions mapped across the collaboration-software market — <strong>Nfluence Partners</strong></span>
+          </div>
+          <div class="t-item">
+            <span class="figure">4.0<span class="suf">/4</span></span>
+            <span class="caption mono">Graduate GPA — M.S. Sustainability Management, <strong>Columbia University</strong></span>
+          </div>
+        </div>
+
+        <div class="cover-foot reveal" style="--d:.95s">
+          <span class="mono">Continued overleaf</span>
+          <span class="arrow" aria-hidden="true">↓</span>
         </div>
       </div>
     </section>
 
-    <section id="about" class="section">
-      <div class="wrap narrow">
-        <p class="section-label">About</p>
-        <h2>Finance, sustainability, and the agents that connect them.</h2>
-        <p>
-          I sit on the Multi-Strategy team within Responsible Finance at SLR (formerly Malk Partners), where I advise private markets clients across the investment lifecycle. My day-to-day spans diligence on prospective investments, building annual reporting programs for funds and their portfolios, and longer-horizon fund-advisory work — ESG program augmentation, value creation, and the operating muscle that turns sustainability commitments into measurable outcomes.
-        </p>
-        <p>
-          Alongside the client work, I lead our internal AI agent development. I build process-improvement agents with the Innovations team and chair the firm's AI committee, where we triage agent ideas from across roles and verticals, maintain the development backlog, and share AI practices firm-wide.
-        </p>
+
+    <!-- ─────────── 01 — LETTER ─────────── -->
+    <section id="letter" class="chapter">
+      <div class="wrap">
+        <header class="chapter-head">
+          <span class="ch-num mono">№ 01</span>
+          <span class="ch-rule"></span>
+          <span class="ch-name mono">A Letter</span>
+        </header>
+
+        <div class="chapter-grid">
+          <h2 class="display">
+            A few words on practice.
+          </h2>
+
+          <div class="prose">
+            <p class="lede has-dropcap">
+              My work sits at the intersection of three things that don't usually get talked about together: <strong>responsible finance</strong>, <strong>sustainability strategy</strong>, and <strong>AI agents</strong>. I'm a Senior Associate on the Multi-Strategy team at Malk, part of SLR, where I advise the firm's largest and most complex private-markets clients across the investment lifecycle.
+            </p>
+            <p>
+              Day to day, I lead investment due diligence on prospective deals, build annual sustainability reporting programs that hold up to LP scrutiny, and run longer-horizon fund advisory engagements — ESG program augmentation, value creation, and the operating muscle that turns commitments into measurable outcomes.
+            </p>
+            <p>
+              Alongside the client work I lead Malk's internal AI agent development. I build process-improvement agents with our Innovations team and chair the firm's AI committee, where we triage agent ideas from across roles, maintain a development backlog, and share what we're learning so the practice compounds rather than fragmenting team by team.
+            </p>
+            <p class="sign-off">
+              <span class="mono">— K.C.</span>
+            </p>
+          </div>
+
+          <aside class="margin-note">
+            <dl>
+              <dt class="mono">Filed</dt>
+              <dd>New York · MMXXVI</dd>
+              <dt class="mono">Desk</dt>
+              <dd>Multi-Strategy, Responsible Finance</dd>
+              <dt class="mono">Role</dt>
+              <dd>Senior Associate</dd>
+              <dt class="mono">House</dt>
+              <dd>Malk, part of SLR</dd>
+            </dl>
+          </aside>
+        </div>
       </div>
     </section>
 
-    <section id="work" class="section section-alt">
+
+    <!-- ─────────── 02 — PRACTICE ─────────── -->
+    <section id="practice" class="chapter chapter-alt">
       <div class="wrap">
-        <p class="section-label">What I Do</p>
-        <h2>Three lines of client work.</h2>
-        <div class="cards">
-          <article class="card">
-            <h3>Investment Due Diligence</h3>
-            <p>ESG and sustainability diligence on prospective investments for multi-strategy private markets clients — surfacing risk, opportunity, and the operating posture of management teams.</p>
+        <header class="chapter-head">
+          <span class="ch-num mono">№ 02</span>
+          <span class="ch-rule"></span>
+          <span class="ch-name mono">The Practice</span>
+        </header>
+
+        <h2 class="display center">
+          Three lines of work,<br /><em>one through-line</em>.
+        </h2>
+
+        <p class="standfirst">
+          Every engagement comes back to the same question: how do you make a responsible-finance commitment <em>operate</em>? Three answers, depending on where in the lifecycle you ask.
+        </p>
+
+        <div class="services">
+          <article class="service">
+            <span class="s-num mono">I.</span>
+            <h3>Investment<br />Due&nbsp;Diligence</h3>
+            <p>ESG and sustainability diligence on prospective investments — surfacing risk, opportunity, and the operating posture of management teams long before close.</p>
+            <ul class="tags mono">
+              <li>Pre-investment</li><li>Risk &amp; opportunity</li><li>Mgmt posture</li>
+            </ul>
           </article>
-          <article class="card">
-            <h3>Annual Reporting</h3>
-            <p>Building and refining annual sustainability and ESG reporting programs that hold up to LP scrutiny — and that funds can actually run year over year.</p>
+
+          <article class="service">
+            <span class="s-num mono">II.</span>
+            <h3>Annual<br />Reporting</h3>
+            <p>Sustainability and ESG reporting programs that hold up to LP scrutiny — and that funds can actually run, year after year, without rebuilding from scratch.</p>
+            <ul class="tags mono">
+              <li>LP-grade</li><li>Repeatable</li><li>Portfolio-wide</li>
+            </ul>
           </article>
-          <article class="card">
-            <h3>Fund Advisory</h3>
-            <p>Longer-horizon engagements: ESG program augmentation, value creation roadmaps, and the firm-level infrastructure to make responsible-finance commitments stick.</p>
+
+          <article class="service">
+            <span class="s-num mono">III.</span>
+            <h3>Fund<br />Advisory</h3>
+            <p>Longer-horizon work: ESG program augmentation, value creation roadmaps, and the firm-level infrastructure that makes responsible-finance commitments stick.</p>
+            <ul class="tags mono">
+              <li>Firm-level</li><li>Value creation</li><li>Multi-year</li>
+            </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="ai" class="section">
-      <div class="wrap narrow">
-        <p class="section-label">AI Leadership</p>
-        <h2>Lead agent developer. AI committee chair.</h2>
-        <p>
-          As the lead agent developer at Malk, I partner with our Innovations team to build internal agents that take work off our consultants' plates — research, drafting, review, synthesis. The goal isn't novelty; it's leverage on the actual bottlenecks we hit in DD, reporting, and advisory.
-        </p>
-        <p>
-          As chair of the firm's AI committee, I bring together people from across verticals and roles to triage agent ideas, prioritize the build backlog, and share what's working (and what isn't) so the practice compounds rather than fragmenting team by team.
-        </p>
+
+    <!-- ─────────── 03 — STUDIO ─────────── -->
+    <section id="studio" class="chapter">
+      <div class="wrap">
+        <header class="chapter-head">
+          <span class="ch-num mono">№ 03</span>
+          <span class="ch-rule"></span>
+          <span class="ch-name mono">The Studio</span>
+        </header>
+
+        <div class="chapter-grid">
+          <h2 class="display">
+            On building<br />the agents that<br />build the work.
+          </h2>
+
+          <div class="prose">
+            <p class="lede">
+              I lead the agent practice at Malk in two roles — one builder, one steward.
+            </p>
+            <p>
+              As <strong>lead agent developer</strong>, I partner with our Innovations team to build internal agents that take work off our consultants' plates: research, drafting, review, synthesis. The goal isn't novelty. It's leverage on the actual bottlenecks we hit inside DD, reporting, and advisory.
+            </p>
+            <p>
+              As <strong>chair of Malk's AI committee</strong>, I bring people together from across verticals and roles to triage agent ideas, prioritize the build backlog, and share what's working (and what isn't) — so the practice compounds rather than fragmenting team by team.
+            </p>
+          </div>
+
+          <aside class="callout">
+            <span class="mono c-lbl">From the desk</span>
+            <p class="c-quote">
+              <span class="quotemark" aria-hidden="true">“</span>The most useful agents we build are unglamorous. They're the second pair of eyes on a 200-page diligence pack at 9&nbsp;p.m.<span class="quotemark close" aria-hidden="true">”</span>
+            </p>
+          </aside>
+        </div>
       </div>
     </section>
 
-    <section id="experience" class="section section-alt">
+
+    <!-- ─────────── 04 — ENGAGEMENTS ─────────── -->
+    <section id="engagements" class="chapter chapter-alt">
       <div class="wrap">
-        <p class="section-label">Experience</p>
-        <h2>Career.</h2>
-        <ol class="timeline">
-          <li>
-            <div class="tl-head">
-              <h3>Malk Partners <span class="muted">(now SLR)</span></h3>
-              <span class="tl-meta">Multi-Strategy Associate · New York · Nov 2024 – present</span>
+        <header class="chapter-head">
+          <span class="ch-num mono">№ 04</span>
+          <span class="ch-rule"></span>
+          <span class="ch-name mono">Selected Engagements</span>
+        </header>
+
+        <h2 class="display">A working career,<br />in case files.</h2>
+
+        <ol class="cases">
+
+          <li class="case">
+            <div class="case-meta mono">
+              <span class="case-no">No. 04</span>
+              <span class="case-date">Nov 2024 — Present</span>
             </div>
-            <p>Sustainability-focused fund advisory for multi-strategy private markets clients — ESG program augmentation, investment due diligence, and value creation. Lead agent developer; chair of the firm AI committee.</p>
+            <h3 class="case-title">Malk, part of SLR</h3>
+            <p class="case-sub mono">Senior Associate · Multi-Strategy · New York</p>
+            <p class="case-body">
+              Sustainability-focused fund advisory for the firm's largest and most complex multi-strategy private-markets clients — ESG program augmentation, investment due diligence, and value creation. Lead agent developer; chair of the firm's AI committee.
+            </p>
+            <div class="case-stats mono">
+              <span><em>Scope</em> Multi-strategy private markets</span>
+              <span><em>Clients</em> Largest &amp; most complex</span>
+              <span><em>Beyond</em> Lead agent dev · AI cmte chair</span>
+            </div>
           </li>
-          <li>
-            <div class="tl-head">
-              <h3>AccountAbility</h3>
-              <span class="tl-meta">Sustainability Advisory Fellow · New York · Jun – Aug 2024</span>
+
+          <li class="case">
+            <div class="case-meta mono">
+              <span class="case-no">No. 03</span>
+              <span class="case-date">Jun — Aug 2024</span>
             </div>
-            <ul>
-              <li>Developed sustainability strategy for a Saudi Public Investment Fund portfolio company in waste management; ran peer-benchmarking for senior executives.</li>
-              <li>Finalized and published the annual sustainability report for a $7.5B public metals &amp; mining company; proposed next-cycle strategy improvements.</li>
-              <li>Briefed firm leadership on a global financial services institution's sustainability strategy, surfacing business-development gaps.</li>
-              <li>Led firm-wide weekly ESG/sustainability news briefings for advisory leadership.</li>
+            <h3 class="case-title">AccountAbility</h3>
+            <p class="case-sub mono">Sustainability Advisory Fellow · New York</p>
+            <p class="case-body">
+              Corporate sustainability strategy development, implementation, and reporting for global advisory clients.
+            </p>
+            <ul class="case-bullets">
+              <li>Developed sustainability strategy for a <strong>Saudi Public Investment Fund</strong> portfolio company in waste management; ran peer-benchmarking for senior executives.</li>
+              <li>Finalized and published the annual sustainability report for a <strong>$7.5B</strong> public metals &amp; mining company; proposed the next-cycle improvement plan.</li>
+              <li>Briefed firm leadership on a global financial-services institution's sustainability strategy, surfacing BD gaps.</li>
+              <li>Led firm-wide weekly ESG / sustainability news briefings for advisory leadership.</li>
             </ul>
           </li>
-          <li>
-            <div class="tl-head">
-              <h3>KPMG US</h3>
-              <span class="tl-meta">Deal Advisory &amp; Strategy Associate · New York · Oct 2022 – Mar 2023</span>
+
+          <li class="case">
+            <div class="case-meta mono">
+              <span class="case-no">No. 02</span>
+              <span class="case-date">Oct 2022 — Mar 2023</span>
             </div>
-            <ul>
-              <li>$33.5M in total cost savings on a cost-transformation workstream for a $1.5B PE-owned cybersecurity portfolio company; $8.9M of that from labor-arbitrage opportunities I identified.</li>
-              <li>Financial and commercial analysis of a $5.6B PE-owned building materials corporation — revenue growth opportunities in the window &amp; door segment.</li>
-              <li>Owned the ESG and Technology sections of the KPMG Consumer Pulse Report published to firm leadership.</li>
+            <h3 class="case-title">KPMG&nbsp;US</h3>
+            <p class="case-sub mono">Deal Advisory &amp; Strategy Associate · New York</p>
+            <p class="case-body">
+              Cost efficiency, revenue growth, and commercial / operational due diligence for PE-owned portfolio companies.
+            </p>
+            <ul class="case-bullets">
+              <li><strong>$33.5M</strong> in total cost savings on a cost-transformation workstream for a <strong>$1.5B</strong> PE-owned cybersecurity portco — including <strong>$8.9M</strong> in labor-arbitrage opportunities I identified.</li>
+              <li>Financial and commercial analysis of a <strong>$5.6B</strong> PE-owned building-materials corporation — revenue growth opportunities in the window &amp; door segment.</li>
+              <li>Built and reported the consumer-behavior analysis for the KPMG Consumer Pulse Report; owned the ESG and Technology sections.</li>
+              <li>Authored weekly executive-team updates for the CEO and CFO of the cybersecurity portco to track EBITDA performance.</li>
             </ul>
           </li>
-          <li>
-            <div class="tl-head">
-              <h3>Nfluence Partners</h3>
-              <span class="tl-meta">IB Market Mapping &amp; Landscape Analysis Extern · Jun – Aug 2021</span>
+
+          <li class="case">
+            <div class="case-meta mono">
+              <span class="case-no">No. 01</span>
+              <span class="case-date">Jun — Aug 2021</span>
             </div>
-            <p>Built a research report on 223 M&amp;A transactions in the collaboration-software market — a read on remote-work dynamics post-COVID for internal stakeholders.</p>
+            <h3 class="case-title">Nfluence Partners</h3>
+            <p class="case-sub mono">Investment Banking Market Mapping Extern</p>
+            <p class="case-body">
+              Built a research report on <strong>223</strong> M&amp;A transactions in the collaboration-software market — a read on remote-work dynamics post-COVID for internal stakeholders.
+            </p>
           </li>
+
         </ol>
+      </div>
+    </section>
 
-        <h3 class="edu-heading">Education</h3>
-        <div class="edu">
-          <div class="edu-row">
-            <div>
-              <strong>Columbia University</strong> — M.S., Sustainability Management
-              <span class="muted">· GPA 4.0</span>
-            </div>
-            <span class="tl-meta">Sept 2023 – Dec 2024</span>
+
+    <!-- ─────────── 05 — CURRICULUM ─────────── -->
+    <section id="curriculum" class="chapter">
+      <div class="wrap">
+        <header class="chapter-head">
+          <span class="ch-num mono">№ 05</span>
+          <span class="ch-rule"></span>
+          <span class="ch-name mono">Curriculum</span>
+        </header>
+
+        <h2 class="display">Education &amp; instruments.</h2>
+
+        <div class="cv-grid">
+          <div class="cv-col">
+            <h3 class="cv-heading mono">Education</h3>
+            <ol class="cv-list">
+              <li>
+                <div class="cv-row">
+                  <strong>Columbia University</strong>
+                  <span class="mono cv-date">Sept 2023 — Dec 2024</span>
+                </div>
+                <span class="cv-sub">M.S., Sustainability Management · <span class="hi">GPA 4.0</span></span>
+              </li>
+              <li>
+                <div class="cv-row">
+                  <strong>Colorado College</strong>
+                  <span class="mono cv-date">Sept 2018 — May 2022</span>
+                </div>
+                <span class="cv-sub">B.A., Economics · <span class="hi">GPA 3.7</span></span>
+              </li>
+            </ol>
           </div>
-          <div class="edu-row">
-            <div>
-              <strong>Colorado College</strong> — B.A., Economics
-              <span class="muted">· GPA 3.7</span>
-            </div>
-            <span class="tl-meta">Sept 2018 – May 2022</span>
+
+          <div class="cv-col">
+            <h3 class="cv-heading mono">Instruments</h3>
+            <ul class="cv-pills mono">
+              <li>PowerPoint</li>
+              <li>Excel</li>
+              <li>Word</li>
+              <li>Canva</li>
+              <li>Think-Cell</li>
+              <li>Templafy</li>
+              <li>ArcGIS&nbsp;StoryMaps</li>
+              <li>Claude / agents</li>
+              <li>Python (light)</li>
+            </ul>
+          </div>
+
+          <div class="cv-col">
+            <h3 class="cv-heading mono">Leadership &amp; Service</h3>
+            <ul class="cv-bullets">
+              <li>Columbia Men's Club Lacrosse</li>
+              <li>Surfrider Foundation — volunteer</li>
+              <li>Colorado College NCAA D-III Lacrosse · leadership council · 4× SCAC Champion · Academic Honor Roll</li>
+              <li>Colorado College Sustainability Committee</li>
+              <li>Eagle Scout, BSA · Order of the Arrow</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="beyond" class="section">
-      <div class="wrap narrow">
-        <p class="section-label">Beyond Work</p>
-        <h2>Detours that shaped the work.</h2>
-        <p>
-          Between Colorado College and KPMG I worked on a <strong>farm in Hawaii</strong>. Between KPMG and Columbia I worked at a <strong>surf camp in Sri Lanka</strong>. Both are part of why I ended up in sustainability and responsible finance rather than straight-line strategy consulting.
+
+    <!-- ─────────── 06 — FIELD NOTES ─────────── -->
+    <section id="field" class="chapter chapter-alt">
+      <div class="wrap">
+        <header class="chapter-head">
+          <span class="ch-num mono">№ 06</span>
+          <span class="ch-rule"></span>
+          <span class="ch-name mono">Field Notes</span>
+        </header>
+
+        <h2 class="display">Detours that<br /><em>shaped the work.</em></h2>
+
+        <p class="standfirst">
+          Two gap stints between formal chapters — both running parallel threads to the sustainability work I do now.
         </p>
-        <p>
-          I played NCAA Division III lacrosse at Colorado College — four-time conference champion, elected to the team's leadership council — and kept playing on Columbia's club team. I volunteer with the <strong>Surfrider Foundation</strong>, and I'm an Eagle Scout (Order of the Arrow). Outside that: surfing, lacrosse, fishing, backpacking, environmental advocacy, and history.
-        </p>
+
+        <div class="field-grid">
+          <article class="field-card">
+            <span class="loc mono">21.3069° N, 157.8583° W</span>
+            <h3>A farm in Hawai‘i.</h3>
+            <p class="field-when mono">Between Colorado College &amp; KPMG · 2022</p>
+            <p>Land, weather, and the slow time of growing-season cycles. A useful counterpoint to the deal-clock the next chapter would run on.</p>
+          </article>
+
+          <article class="field-card">
+            <span class="loc mono">5.9485° N, 80.4500° E</span>
+            <h3>A surf camp in Sri Lanka.</h3>
+            <p class="field-when mono">Between KPMG &amp; Columbia · 2023</p>
+            <p>Working a small business in a coastal community made the case for sustainability and responsible tourism more vividly than any classroom did. (Surfing every day didn't hurt either.)</p>
+          </article>
+
+          <article class="field-card field-card-wide">
+            <span class="loc mono">In addition</span>
+            <h3>The standing interests.</h3>
+            <p>Surfing · lacrosse · fishing · backpacking · environmental advocacy · history. A four-time conference champion in NCAA D-III lacrosse at Colorado College. Volunteer with the Surfrider Foundation. Eagle Scout, Order of the Arrow.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="contact" class="section section-alt">
-      <div class="wrap narrow contact">
-        <p class="section-label">Contact</p>
-        <h2>Get in touch.</h2>
-        <ul class="contact-list">
-          <li><span class="lbl">Email</span><a href="mailto:kyle.curtin@icloud.com">kyle.curtin@icloud.com</a></li>
-          <li><span class="lbl">LinkedIn</span><a href="https://linkedin.com/in/kylecurtin24/" rel="me noopener" target="_blank">linkedin.com/in/kylecurtin24</a></li>
-          <li><span class="lbl">GitHub</span><a href="https://github.com/kylecurtin" rel="me noopener" target="_blank">github.com/kylecurtin</a></li>
-          <li><span class="lbl">Based in</span><span>New York, NY</span></li>
+
+    <!-- ─────────── 07 — CORRESPONDENCE ─────────── -->
+    <section id="correspond" class="chapter">
+      <div class="wrap">
+        <header class="chapter-head">
+          <span class="ch-num mono">№ 07</span>
+          <span class="ch-rule"></span>
+          <span class="ch-name mono">Correspondence</span>
+        </header>
+
+        <h2 class="display">Open to a&nbsp;letter.</h2>
+        <p class="standfirst">
+          Diligence work, advisory engagements, AI experiments, surfing recommendations — all welcome.
+        </p>
+
+        <ul class="contact">
+          <li>
+            <span class="c-key mono">By post</span>
+            <a class="c-val big" href="mailto:kyle.curtin@icloud.com">kyle.curtin@icloud.com</a>
+          </li>
+          <li>
+            <span class="c-key mono">On LinkedIn</span>
+            <a class="c-val big" href="https://linkedin.com/in/kylecurtin24/" target="_blank" rel="me noopener">linkedin.com/in/kylecurtin24</a>
+          </li>
+          <li>
+            <span class="c-key mono">On GitHub</span>
+            <a class="c-val big" href="https://github.com/kylecurtin" target="_blank" rel="me noopener">github.com/kylecurtin</a>
+          </li>
+          <li>
+            <span class="c-key mono">Based in</span>
+            <span class="c-val">New York, NY</span>
+          </li>
         </ul>
       </div>
     </section>
+
   </main>
 
-  <footer class="site-footer">
+
+  <!-- ─────────── COLOPHON ─────────── -->
+  <footer class="colophon">
     <div class="wrap">
-      <span>© <span id="year"></span> Kyle Curtin</span>
-      <span class="muted">New York, NY</span>
+      <div class="colophon-rule"></div>
+      <div class="colophon-grid">
+        <div>
+          <p class="mono c-lbl">Colophon</p>
+          <p class="c-body">
+            This report is set in <em>Fraunces</em> and <em>IBM Plex Sans</em>, with <em>IBM Plex Mono</em> for marginalia and rule. Composed in plain HTML and CSS, hand-coded in New York. Hosted at <a href="https://kylecurtin.github.io">kylecurtin.github.io</a>.
+          </p>
+        </div>
+        <div>
+          <p class="mono c-lbl">Edition</p>
+          <p class="c-body">
+            Vol. I · № <span id="rev">1</span><br />
+            Revised <span id="revdate">May 2026</span>
+          </p>
+        </div>
+        <div>
+          <p class="mono c-lbl">Editor</p>
+          <p class="c-body">
+            Kyle Curtin<br />
+            <a href="mailto:kyle.curtin@icloud.com">kyle.curtin@icloud.com</a>
+          </p>
+        </div>
+      </div>
+      <div class="colophon-rule"></div>
+      <p class="copy mono">© <span id="year"></span> Kyle Curtin · All rights reserved · Continued in the next volume.</p>
     </div>
   </footer>
 
+
   <script>
+    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Reveal on scroll (subtle fade/translate)
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      }
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
+
+    document.querySelectorAll('.chapter, .ticker, .cover-foot, .deck, .cover-title, .kicker').forEach(el => io.observe(el));
+
+    // Active chapter in folio
+    const folioLinks = document.querySelectorAll('.folio a');
+    const chapters = [...document.querySelectorAll('main > section[id]')];
+    const setActive = () => {
+      const y = window.scrollY + window.innerHeight * 0.35;
+      let active = chapters[0]?.id;
+      for (const c of chapters) {
+        if (c.offsetTop <= y) active = c.id;
+      }
+      folioLinks.forEach(a => {
+        a.parentElement.classList.toggle('active', a.dataset.target === active);
+      });
+    };
+    setActive();
+    window.addEventListener('scroll', setActive, { passive: true });
+    window.addEventListener('resize', setActive);
   </script>
 </body>
 </html>
