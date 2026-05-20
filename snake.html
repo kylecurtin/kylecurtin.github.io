@@ -1,0 +1,1522 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Plate XII — Serpens hortulanus · A study in cultivation</title>
+<meta name="description" content="A snake game presented as a botanical field study. A diversion by Kyle Curtin." />
+<meta name="theme-color" content="#ede0c6" />
+<meta name="color-scheme" content="light" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23ede0c6'/%3E%3Cpath d='M14 44 C 14 28, 28 28, 32 32 C 36 36, 50 36, 50 20' stroke='%232d4a25' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='52' cy='18' r='4' fill='%23842a26'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  /* ─────────────────────────────────────────────────────────
+     PLATE XII — A study in cultivation
+     A botanical field-study presentation of the snake diversion.
+     ───────────────────────────────────────────────────────── */
+
+  :root {
+    /* Paper & ink */
+    --paper:        #ede0c6;
+    --paper-warm:   #e6d6b3;
+    --paper-deep:   #dcc89e;
+    --ink:          #2b1f10;
+    --ink-soft:     #5a4528;
+    --ink-muted:    #8a6a3f;
+    --sepia:        #8a6a3f;
+    --sepia-soft:   #b59870;
+    --rule:         #c4ad7e;
+    --rule-strong:  #a48857;
+
+    /* Botanical greens */
+    --moss:         #4a6b3a;
+    --moss-deep:    #354c2a;
+    --vine:         #2d4a25;
+    --vine-deep:    #1f3318;
+    --leaf-soft:    #5e7d44;
+
+    /* Berry & bloom */
+    --berry:        #842a26;
+    --berry-deep:   #5e1e1c;
+    --bloom:        #d4a64a;
+    --bone:         #f4ecdd;
+
+    /* Type */
+    --display:      "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+    --serif:        "EB Garamond", "Iowan Old Style", Georgia, serif;
+    --mono:         "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+    /* Motion */
+    --ease:         cubic-bezier(.16, 1, .3, 1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html, body { height: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.55;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection { background: var(--vine); color: var(--paper); }
+
+  /* Paper grain — subtle noise */
+  .grain {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    opacity: 0.55;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' seed='7' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.16  0 0 0 0 0.12  0 0 0 0 0.06  0 0 0 0.08 0'/></filter><rect width='240' height='240' filter='url(%23n)'/></svg>");
+    background-size: 240px 240px;
+  }
+
+  /* Aged paper vignette */
+  body::before {
+    content: '';
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background:
+      radial-gradient(ellipse at top, rgba(252, 240, 210, 0.55), transparent 60%),
+      radial-gradient(ellipse at bottom, rgba(120, 80, 30, 0.10), transparent 65%);
+  }
+
+  /* ───── Page ───── */
+  .page {
+    position: relative;
+    z-index: 2;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: clamp(36px, 5vw, 64px) clamp(20px, 4vw, 48px) clamp(48px, 6vw, 72px);
+  }
+
+  /* ───── Title block ───── */
+  .title {
+    text-align: center;
+    margin: 0 auto clamp(28px, 4vw, 44px);
+    max-width: 720px;
+  }
+  .kicker {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--sepia);
+    margin: 0 0 22px;
+  }
+  .kicker .dot { color: var(--rule-strong); margin: 0 8px; }
+
+  .binomial {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(40px, 7vw, 72px);
+    line-height: 1.0;
+    letter-spacing: -0.012em;
+    margin: 0;
+    color: var(--ink);
+  }
+  .binomial .auth {
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 0.22em;
+    letter-spacing: 0.18em;
+    vertical-align: 0.95em;
+    margin-left: 10px;
+    color: var(--sepia);
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .common {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: clamp(17px, 2vw, 22px);
+    color: var(--ink-soft);
+    margin: 14px 0 22px;
+    letter-spacing: 0.005em;
+  }
+
+  .title-rule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 4px;
+  }
+  .title-rule .seg {
+    height: 1px;
+    width: 80px;
+    background: var(--rule-strong);
+  }
+  .title-rule .glyph {
+    width: 12px;
+    height: 12px;
+    transform: rotate(45deg);
+    border: 1px solid var(--rule-strong);
+    background: var(--paper);
+  }
+
+  /* ───── Study layout ───── */
+  .study {
+    display: grid;
+    grid-template-columns: 200px auto 200px;
+    gap: clamp(20px, 3vw, 40px);
+    align-items: start;
+    justify-content: center;
+  }
+
+  /* ───── Annotation panels ───── */
+  .annot {
+    padding-top: 6px;
+  }
+  .annot-left { text-align: right; }
+  .annot-left dt, .annot-left dd, .annot-left .legend { justify-content: flex-end; }
+  .annot-right { text-align: left; }
+
+  .annot dl {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .annot dt {
+    font-family: var(--mono);
+    font-size: 9.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+  .annot dd {
+    margin: 0;
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 19px;
+    color: var(--ink);
+    line-height: 1.15;
+  }
+  .annot dd .num {
+    font-family: var(--mono);
+    font-style: normal;
+    font-weight: 500;
+    color: var(--vine);
+    font-size: 18px;
+    letter-spacing: 0.02em;
+  }
+  .annot dd small {
+    font-family: var(--mono);
+    font-style: normal;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-left: 4px;
+  }
+
+  /* Stat that flashes briefly when score changes */
+  .annot dd.bump .num {
+    animation: bump .5s var(--ease);
+  }
+  @keyframes bump {
+    0% { color: var(--berry); transform: scale(1); }
+    50% { color: var(--berry); transform: scale(1.15); }
+    100% { color: var(--vine); transform: scale(1); }
+  }
+  .annot dd .num { display: inline-block; transform-origin: center; }
+
+  /* Controls legend */
+  .legend {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 4px;
+    align-items: center;
+    font-size: 12px !important;
+    font-style: normal !important;
+    font-family: var(--mono) !important;
+  }
+  .key {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px;
+    height: 22px;
+    padding: 0 6px;
+    border: 1px solid var(--sepia);
+    border-radius: 2px;
+    background: var(--paper-warm);
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink);
+    font-weight: 500;
+    box-shadow: 0 1px 0 var(--rule-strong);
+  }
+  .key.wide { min-width: 48px; }
+  .lbl {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--ink-muted);
+    margin-left: 6px;
+    text-transform: uppercase;
+  }
+  .mt { margin-top: 12px; }
+
+  /* Specimen legend */
+  .spec-legend {
+    display: grid !important;
+    grid-template-columns: 1fr;
+    gap: 10px !important;
+    font-style: normal !important;
+    font-family: var(--mono) !important;
+    font-size: 11px !important;
+  }
+  .spec-legend > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .spec-legend canvas {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+  }
+  .spec-legend span {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+
+  /* ───── Board ───── */
+  .board {
+    position: relative;
+    padding: 14px;
+    background: var(--paper-warm);
+    border: 1px solid var(--ink);
+    box-shadow:
+      0 0 0 1px var(--paper-warm),
+      0 0 0 2px var(--rule-strong),
+      0 20px 50px rgba(60, 35, 10, 0.18),
+      inset 0 0 60px rgba(140, 95, 40, 0.10);
+  }
+  .board::before {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border: 1px solid var(--sepia-soft);
+    pointer-events: none;
+  }
+  /* Ornamental corner SVGs */
+  .board-corner {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    color: var(--sepia);
+    z-index: 3;
+  }
+  .board-corner.tl { top: 10px; left: 10px; }
+  .board-corner.tr { top: 10px; right: 10px; transform: scaleX(-1); }
+  .board-corner.bl { bottom: 10px; left: 10px; transform: scaleY(-1); }
+  .board-corner.br { bottom: 10px; right: 10px; transform: scale(-1, -1); }
+
+  canvas#game {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    max-width: 528px;
+    height: auto;
+    background: var(--paper);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ───── Pre-game / paused overlay ───── */
+  .overlay {
+    position: absolute;
+    inset: 14px;
+    z-index: 4;
+    background: rgba(237, 224, 198, 0.92);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    border: 1px solid var(--sepia-soft);
+    transition: opacity .35s var(--ease), visibility .35s var(--ease);
+  }
+  .overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  .overlay-inner {
+    text-align: center;
+    max-width: 360px;
+  }
+  .ov-kicker {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--sepia);
+    margin: 0 0 14px;
+  }
+  .ov-body {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 19px;
+    line-height: 1.42;
+    color: var(--ink);
+    margin: 0 0 22px;
+  }
+  .ov-keys {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    margin: 0 0 24px;
+  }
+  .ov-cta {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--vine);
+    font-weight: 600;
+    margin: 0;
+    animation: pulse 2.2s var(--ease) infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.55; }
+    50%      { opacity: 1; }
+  }
+
+  /* ───── Specimen card (game over) ───── */
+  .card {
+    position: absolute;
+    inset: 50% auto auto 50%;
+    transform: translate(-50%, -50%) translateY(8px);
+    z-index: 5;
+    width: min(82%, 380px);
+    background: var(--paper);
+    border: 1px solid var(--ink);
+    padding: 38px 30px 28px;
+    box-shadow:
+      0 0 0 1px var(--paper),
+      0 0 0 2px var(--ink),
+      0 30px 80px rgba(40, 25, 10, 0.45);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .4s var(--ease), transform .5s var(--ease);
+  }
+  .card.shown {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    pointer-events: auto;
+  }
+  .card[hidden] { display: block; }
+
+  .card-tag {
+    position: absolute;
+    top: -10px;
+    left: 24px;
+    background: var(--paper);
+    padding: 0 8px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--sepia);
+  }
+  .card-title {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 1.05;
+    margin: 0 0 8px;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+  .card-sub {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin: 0 0 22px;
+  }
+  .card-stats {
+    margin: 0 0 22px;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 14px 0;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px 16px;
+  }
+  .card-stats dt {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    align-self: center;
+  }
+  .card-stats dd {
+    margin: 0;
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ink);
+    text-align: right;
+  }
+  .card-stats dd .num {
+    font-family: var(--mono);
+    font-style: normal;
+    color: var(--vine);
+    font-weight: 500;
+  }
+
+  .card-cta {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    padding: 14px 16px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background .2s var(--ease);
+  }
+  .card-cta:hover { background: var(--vine); }
+
+  /* New record ribbon */
+  .card-record {
+    margin: -10px 0 18px;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--berry);
+    font-weight: 600;
+  }
+  .card-record.hidden { display: none; }
+
+  /* ───── Footer colophon ───── */
+  .colophon {
+    text-align: center;
+    margin-top: clamp(36px, 5vw, 56px);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+  .colophon a {
+    color: var(--sepia);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+  }
+  .colophon a:hover { color: var(--vine); border-bottom-color: var(--vine); }
+
+  /* ───── Reveal on load ───── */
+  .title, .annot-left, .annot-right, .board, .colophon {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: reveal .9s var(--ease) forwards;
+  }
+  .title { animation-delay: .05s; }
+  .annot-left { animation-delay: .25s; }
+  .board { animation-delay: .35s; }
+  .annot-right { animation-delay: .45s; }
+  .colophon { animation-delay: .6s; }
+  @keyframes reveal {
+    to { opacity: 1; transform: none; }
+  }
+
+  /* ───── Responsive ───── */
+  @media (max-width: 920px) {
+    .study {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+    .annot {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      text-align: left;
+    }
+    .annot-left, .annot-right { text-align: left; }
+    .annot dl {
+      grid-column: 1 / -1;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 18px 28px;
+    }
+    .annot dt { font-size: 9px; }
+    .annot dd { font-size: 17px; }
+    .annot-left dt, .annot-left dd, .annot-left .legend { justify-content: flex-start; }
+  }
+  @media (max-width: 540px) {
+    .page { padding: 28px 16px 40px; }
+    .binomial { font-size: 38px; }
+    .common { font-size: 16px; }
+    .key { min-width: 20px; height: 20px; font-size: 10px; }
+    .key.wide { min-width: 42px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .title, .annot-left, .annot-right, .board, .colophon { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <main class="page">
+
+    <header class="title">
+      <p class="kicker">
+        <span>Plate XII</span><span class="dot">·</span>
+        <span>A study in cultivation</span><span class="dot">·</span>
+        <span>MMXXVI</span>
+      </p>
+      <h1 class="binomial">
+        Serpens hortulanus<span class="auth">K. Curtin</span>
+      </h1>
+      <p class="common">— the cultivated garden serpent, its habits &amp; growth.</p>
+      <div class="title-rule">
+        <span class="seg"></span>
+        <span class="glyph"></span>
+        <span class="seg"></span>
+      </div>
+    </header>
+
+    <section class="study">
+
+      <!-- LEFT ANNOTATIONS -->
+      <aside class="annot annot-left" aria-label="Field observations">
+        <dl>
+          <div>
+            <dt>Observed</dt>
+            <dd id="dateField">—</dd>
+          </div>
+          <div>
+            <dt>By</dt>
+            <dd>K. Curtin</dd>
+          </div>
+          <div>
+            <dt>Length</dt>
+            <dd><span class="num" id="lenField">3</span> <small>seg.</small></dd>
+          </div>
+          <div>
+            <dt>Specimens</dt>
+            <dd id="scoreCell"><span class="num" id="scoreField">0</span> <small>gathered</small></dd>
+          </div>
+          <div>
+            <dt>High water</dt>
+            <dd><span class="num" id="bestField">0</span></dd>
+          </div>
+          <div>
+            <dt>Elapsed</dt>
+            <dd><span class="num" id="timeField">00:00</span></dd>
+          </div>
+        </dl>
+      </aside>
+
+      <!-- BOARD -->
+      <div class="board">
+        <!-- Ornamental corners (SVG flourishes) -->
+        <svg class="board-corner tl" viewBox="0 0 28 28" aria-hidden="true">
+          <path d="M 1 28 L 1 14 C 1 6 6 1 14 1 L 28 1" fill="none" stroke="currentColor" stroke-width="0.8"/>
+          <path d="M 5 18 C 9 14 14 11 18 5" fill="none" stroke="currentColor" stroke-width="0.6"/>
+          <circle cx="6" cy="6" r="1.2" fill="currentColor"/>
+        </svg>
+        <svg class="board-corner tr" viewBox="0 0 28 28" aria-hidden="true">
+          <path d="M 1 28 L 1 14 C 1 6 6 1 14 1 L 28 1" fill="none" stroke="currentColor" stroke-width="0.8"/>
+          <path d="M 5 18 C 9 14 14 11 18 5" fill="none" stroke="currentColor" stroke-width="0.6"/>
+          <circle cx="6" cy="6" r="1.2" fill="currentColor"/>
+        </svg>
+        <svg class="board-corner bl" viewBox="0 0 28 28" aria-hidden="true">
+          <path d="M 1 28 L 1 14 C 1 6 6 1 14 1 L 28 1" fill="none" stroke="currentColor" stroke-width="0.8"/>
+          <path d="M 5 18 C 9 14 14 11 18 5" fill="none" stroke="currentColor" stroke-width="0.6"/>
+          <circle cx="6" cy="6" r="1.2" fill="currentColor"/>
+        </svg>
+        <svg class="board-corner br" viewBox="0 0 28 28" aria-hidden="true">
+          <path d="M 1 28 L 1 14 C 1 6 6 1 14 1 L 28 1" fill="none" stroke="currentColor" stroke-width="0.8"/>
+          <path d="M 5 18 C 9 14 14 11 18 5" fill="none" stroke="currentColor" stroke-width="0.6"/>
+          <circle cx="6" cy="6" r="1.2" fill="currentColor"/>
+        </svg>
+
+        <canvas id="game" width="528" height="528" aria-label="Game board"></canvas>
+
+        <!-- Pre-game / paused overlay -->
+        <div class="overlay" id="overlay">
+          <div class="overlay-inner">
+            <p class="ov-kicker" id="ovKicker">Field instructions</p>
+            <p class="ov-body" id="ovBody">
+              Cultivate the vine by gathering specimens. Mind the bounds of the plate; do not let the vine cross itself.
+            </p>
+            <p class="ov-keys">← ↑ → ↓ &nbsp;or&nbsp; W A S D &nbsp;·&nbsp; Space pauses</p>
+            <p class="ov-cta" id="ovCta">Press any direction to begin</p>
+          </div>
+        </div>
+
+        <!-- Game-over specimen card -->
+        <div class="card" id="card" hidden>
+          <div class="card-tag">Specimen №&nbsp;<span id="specNo">001</span></div>
+          <p class="card-record hidden" id="record">— A new high-water mark —</p>
+          <h2 class="card-title" id="cardTitle">A specimen, preserved.</h2>
+          <p class="card-sub" id="cardSub">The vine ceased its growth at the moment recorded.</p>
+          <dl class="card-stats">
+            <dt>Length attained</dt>
+            <dd><span class="num" id="finalLen">3</span> seg.</dd>
+            <dt>Specimens gathered</dt>
+            <dd><span class="num" id="finalScore">0</span></dd>
+            <dt>Time in study</dt>
+            <dd><span class="num" id="finalTime">00:00</span></dd>
+            <dt>Cause of cessation</dt>
+            <dd id="cause"><em>self-encounter</em></dd>
+          </dl>
+          <button class="card-cta" id="restart" type="button">Begin a fresh study&nbsp;&nbsp;→</button>
+        </div>
+      </div>
+
+      <!-- RIGHT ANNOTATIONS -->
+      <aside class="annot annot-right" aria-label="Controls and legend">
+        <dl>
+          <div>
+            <dt>Controls</dt>
+            <dd class="legend">
+              <span class="key">←</span>
+              <span class="key">↑</span>
+              <span class="key">→</span>
+              <span class="key">↓</span>
+              <span class="lbl">direction</span>
+            </dd>
+            <dd class="legend">
+              <span class="key">W</span>
+              <span class="key">A</span>
+              <span class="key">S</span>
+              <span class="key">D</span>
+              <span class="lbl">alt.</span>
+            </dd>
+            <dd class="legend">
+              <span class="key wide">Space</span>
+              <span class="lbl">pause</span>
+            </dd>
+            <dd class="legend">
+              <span class="key wide">R</span>
+              <span class="lbl">restart</span>
+            </dd>
+          </div>
+          <div>
+            <dt>Specimens</dt>
+            <dd class="spec-legend" id="specLegend">
+              <!-- populated by JS -->
+            </dd>
+          </div>
+        </dl>
+      </aside>
+    </section>
+
+    <footer class="colophon">
+      A leisure study by <a href="https://kylecurtin.github.io">Kyle Curtin</a> ·
+      composed in Cormorant Garamond, EB Garamond &amp; IBM Plex Mono ·
+      MMXXVI
+    </footer>
+  </main>
+
+<script>
+(() => {
+  'use strict';
+
+  /* ─────────────────────────────────────────────────────────
+     Configuration
+     ───────────────────────────────────────────────────────── */
+
+  const COLS = 22;
+  const ROWS = 22;
+  const CELL = 24;                // virtual logical cell size — canvas is COLS*CELL square
+  const TICK_BASE = 150;          // initial ms per tick
+  const TICK_FLOOR = 72;          // fastest allowed
+  const TICK_DECAY = 3.5;         // ms removed per food
+  const INITIAL_LEN = 3;
+
+  // Palette (mirrors CSS vars)
+  const C = {
+    paper:     '#ede0c6',
+    paperWarm: '#e6d6b3',
+    grid:      'rgba(140, 100, 50, 0.10)',
+    gridStrong:'rgba(140, 100, 50, 0.18)',
+    ink:       '#2b1f10',
+    sepia:     '#8a6a3f',
+    vine:      '#2d4a25',
+    vineLight: '#4a6b3a',
+    vineDeep:  '#1f3318',
+    leaf:      '#5e7d44',
+    berry:     '#842a26',
+    berryDeep: '#5e1e1c',
+    tan:       '#c8a672',
+    capDark:   '#6b4a2a',
+    bloom:     '#d4a64a',
+    bloomDeep: '#a3781f',
+    bone:      '#f4ecdd',
+    mush:      '#9c5132',
+  };
+
+  // Specimen catalog
+  const SPECIES = [
+    { id: 'berry',    name: 'Berry',    draw: drawBerry },
+    { id: 'mushroom', name: 'Mushroom', draw: drawMushroom },
+    { id: 'leaf',     name: 'Leaf',     draw: drawLeaf },
+    { id: 'acorn',    name: 'Acorn',    draw: drawAcorn },
+    { id: 'flower',   name: 'Bloom',    draw: drawFlower },
+  ];
+
+  /* ─────────────────────────────────────────────────────────
+     DOM hooks
+     ───────────────────────────────────────────────────────── */
+  const canvas   = document.getElementById('game');
+  const ctx      = canvas.getContext('2d');
+  const overlay  = document.getElementById('overlay');
+  const ovKicker = document.getElementById('ovKicker');
+  const ovBody   = document.getElementById('ovBody');
+  const ovCta    = document.getElementById('ovCta');
+  const card     = document.getElementById('card');
+  const restartBtn = document.getElementById('restart');
+
+  const lenField    = document.getElementById('lenField');
+  const scoreField  = document.getElementById('scoreField');
+  const scoreCell   = document.getElementById('scoreCell');
+  const bestField   = document.getElementById('bestField');
+  const timeField   = document.getElementById('timeField');
+  const dateField   = document.getElementById('dateField');
+
+  const finalLen    = document.getElementById('finalLen');
+  const finalScore  = document.getElementById('finalScore');
+  const finalTime   = document.getElementById('finalTime');
+  const causeEl     = document.getElementById('cause');
+  const specNoEl    = document.getElementById('specNo');
+  const recordEl    = document.getElementById('record');
+  const cardTitle   = document.getElementById('cardTitle');
+  const cardSub     = document.getElementById('cardSub');
+  const specLegend  = document.getElementById('specLegend');
+
+  /* ─────────────────────────────────────────────────────────
+     Canvas resolution — sharp at any size
+     ───────────────────────────────────────────────────────── */
+  function fitCanvas() {
+    const dpr = Math.max(1, window.devicePixelRatio || 1);
+    const cssSize = canvas.clientWidth;
+    canvas.width  = cssSize * dpr;
+    canvas.height = cssSize * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    state.cellPx = cssSize / COLS;
+  }
+
+  /* ─────────────────────────────────────────────────────────
+     Game state
+     ───────────────────────────────────────────────────────── */
+  const state = {
+    snake: [],
+    dir: { x: 1, y: 0 },
+    nextDir: { x: 1, y: 0 },
+    food: null,
+    score: 0,
+    best: Number(localStorage.getItem('plateXII.best') || 0),
+    runs: Number(localStorage.getItem('plateXII.runs') || 0),
+    running: false,
+    paused: false,
+    gameOver: false,
+    tick: TICK_BASE,
+    lastTick: 0,
+    startedAt: 0,
+    elapsed: 0,
+    finalElapsedMs: 0,
+    rafId: 0,
+    bloom: null,    // { x, y, age } — eat animation
+    headWiggle: 0,  // phase for subtle head bob
+    cellPx: 24,
+  };
+
+  function pad(n) { return n.toString().padStart(2, '0'); }
+  function fmtTime(ms) {
+    const s = Math.floor(ms / 1000);
+    return `${pad(Math.floor(s / 60))}:${pad(s % 60)}`;
+  }
+
+  function setDate() {
+    const d = new Date();
+    const months = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'Jun.', 'Jul.', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.'];
+    dateField.textContent = `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
+  }
+
+  /* ─────────────────────────────────────────────────────────
+     Lifecycle
+     ───────────────────────────────────────────────────────── */
+  function init() {
+    setDate();
+    bestField.textContent = state.best;
+    buildLegend();
+    reset();
+    fitCanvas();
+    draw();
+  }
+
+  function reset() {
+    state.snake = [];
+    const cx = Math.floor(COLS / 2);
+    const cy = Math.floor(ROWS / 2);
+    for (let i = 0; i < INITIAL_LEN; i++) {
+      state.snake.unshift({ x: cx - i, y: cy });
+    }
+    state.dir     = { x: 1, y: 0 };
+    state.nextDir = { x: 1, y: 0 };
+    state.score = 0;
+    state.tick = TICK_BASE;
+    state.running = false;
+    state.paused = false;
+    state.gameOver = false;
+    state.startedAt = 0;
+    state.elapsed = 0;
+    state.bloom = null;
+    spawnFood();
+    updateHud();
+    showOverlay({
+      kicker: 'Field instructions',
+      body: 'Cultivate the vine by gathering specimens. Mind the bounds of the plate; do not let the vine cross itself.',
+      cta:  'Press any direction to begin',
+    });
+    hideCard();
+  }
+
+  function start() {
+    if (state.running) return;
+    state.running = true;
+    state.paused = false;
+    state.startedAt = performance.now() - state.elapsed;
+    state.lastTick = performance.now();
+    hideOverlay();
+    cancelAnimationFrame(state.rafId);
+    state.rafId = requestAnimationFrame(loop);
+  }
+
+  function pauseToggle() {
+    if (state.gameOver || !state.running && !state.paused) return;
+    state.paused = !state.paused;
+    if (state.paused) {
+      state.elapsed = performance.now() - state.startedAt;
+      showOverlay({
+        kicker: 'A pause in the study',
+        body: 'The vine rests. Press space — or any direction — to resume.',
+        cta:  'Press space to resume',
+      });
+    } else {
+      state.startedAt = performance.now() - state.elapsed;
+      state.lastTick = performance.now();
+      hideOverlay();
+      cancelAnimationFrame(state.rafId);
+      state.rafId = requestAnimationFrame(loop);
+    }
+  }
+
+  function loop(now) {
+    if (!state.running || state.paused) return;
+    if (now - state.lastTick >= state.tick) {
+      state.lastTick = now;
+      step();
+    }
+    // Update elapsed + bloom + head wiggle
+    state.elapsed = now - state.startedAt;
+    timeField.textContent = fmtTime(state.elapsed);
+    if (state.bloom) {
+      state.bloom.age += 1;
+      if (state.bloom.age > 14) state.bloom = null;
+    }
+    state.headWiggle += 0.18;
+    draw();
+    state.rafId = requestAnimationFrame(loop);
+  }
+
+  function step() {
+    // Adopt queued direction
+    state.dir = state.nextDir;
+
+    // Compute new head
+    const head = state.snake[0];
+    const nx = head.x + state.dir.x;
+    const ny = head.y + state.dir.y;
+
+    // Wall collision
+    if (nx < 0 || ny < 0 || nx >= COLS || ny >= ROWS) {
+      return die('reached the edge of the plate');
+    }
+
+    // Self collision — exclude tail unless food about to be eaten
+    const willEat = state.food && nx === state.food.x && ny === state.food.y;
+    const checkUntil = willEat ? state.snake.length : state.snake.length - 1;
+    for (let i = 0; i < checkUntil; i++) {
+      if (state.snake[i].x === nx && state.snake[i].y === ny) {
+        return die('crossed its own path');
+      }
+    }
+
+    // Apply move
+    state.snake.unshift({ x: nx, y: ny });
+
+    if (willEat) {
+      state.score += 1;
+      state.tick = Math.max(TICK_FLOOR, TICK_BASE - state.score * TICK_DECAY);
+      // bloom burst at food location
+      state.bloom = { x: state.food.x, y: state.food.y, age: 0, sp: state.food.species };
+      spawnFood();
+      bumpScore();
+    } else {
+      state.snake.pop();
+    }
+
+    updateHud();
+  }
+
+  function die(cause) {
+    state.gameOver = true;
+    state.running = false;
+    state.finalElapsedMs = state.elapsed;
+    state.runs += 1;
+    localStorage.setItem('plateXII.runs', state.runs);
+
+    let isNew = false;
+    if (state.score > state.best) {
+      state.best = state.score;
+      localStorage.setItem('plateXII.best', state.best);
+      bestField.textContent = state.best;
+      isNew = true;
+    }
+
+    // Compose card
+    specNoEl.textContent = state.runs.toString().padStart(3, '0');
+    finalLen.textContent = state.snake.length;
+    finalScore.textContent = state.score;
+    finalTime.textContent = fmtTime(state.finalElapsedMs);
+    causeEl.innerHTML = `<em>${cause}</em>`;
+    recordEl.classList.toggle('hidden', !isNew);
+    if (isNew) {
+      cardTitle.textContent = 'A finer specimen than any before.';
+      cardSub.textContent = 'This study sets a new high-water mark.';
+    } else {
+      cardTitle.textContent = 'A specimen, preserved.';
+      cardSub.textContent = 'The vine ceased its growth at the moment recorded.';
+    }
+
+    // brief delay then show card
+    setTimeout(showCard, 360);
+  }
+
+  /* ─────────────────────────────────────────────────────────
+     Food
+     ───────────────────────────────────────────────────────── */
+  function spawnFood() {
+    const occupied = new Set(state.snake.map(s => s.x + ',' + s.y));
+    const empties = [];
+    for (let y = 0; y < ROWS; y++) {
+      for (let x = 0; x < COLS; x++) {
+        if (!occupied.has(x + ',' + y)) empties.push({ x, y });
+      }
+    }
+    if (!empties.length) return; // board full — won
+    const pos = empties[Math.floor(Math.random() * empties.length)];
+    const sp  = SPECIES[Math.floor(Math.random() * SPECIES.length)];
+    state.food = { x: pos.x, y: pos.y, species: sp };
+  }
+
+  /* ─────────────────────────────────────────────────────────
+     HUD
+     ───────────────────────────────────────────────────────── */
+  function updateHud() {
+    lenField.textContent = state.snake.length;
+    scoreField.textContent = state.score;
+  }
+  function bumpScore() {
+    scoreCell.classList.remove('bump');
+    void scoreCell.offsetWidth; // restart animation
+    scoreCell.classList.add('bump');
+  }
+
+  function showOverlay({ kicker, body, cta }) {
+    ovKicker.textContent = kicker;
+    ovBody.textContent = body;
+    ovCta.textContent = cta;
+    overlay.classList.remove('hidden');
+  }
+  function hideOverlay() { overlay.classList.add('hidden'); }
+  function showCard() {
+    card.hidden = false;
+    requestAnimationFrame(() => card.classList.add('shown'));
+  }
+  function hideCard() {
+    card.classList.remove('shown');
+    card.hidden = true;
+  }
+
+  /* ─────────────────────────────────────────────────────────
+     Drawing — Canvas
+     ───────────────────────────────────────────────────────── */
+  function draw() {
+    const px = state.cellPx;
+    const W = COLS * px;
+    const H = ROWS * px;
+
+    // Paper bg
+    ctx.fillStyle = C.paper;
+    ctx.fillRect(0, 0, W, H);
+
+    // Subtle warm wash in corners
+    const grad = ctx.createRadialGradient(W/2, H/2, W*0.2, W/2, H/2, W*0.75);
+    grad.addColorStop(0, 'rgba(0,0,0,0)');
+    grad.addColorStop(1, 'rgba(140, 95, 40, 0.06)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, W, H);
+
+    drawGrid(px, W, H);
+
+    if (state.food) drawFood(state.food, px);
+    if (state.bloom) drawBloom(state.bloom, px);
+
+    drawSnake(px);
+  }
+
+  function drawGrid(px, W, H) {
+    ctx.save();
+    ctx.lineWidth = 0.5;
+    ctx.strokeStyle = C.grid;
+    for (let i = 1; i < COLS; i++) {
+      const x = Math.round(i * px) + 0.5;
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x, H);
+      ctx.stroke();
+    }
+    for (let i = 1; i < ROWS; i++) {
+      const y = Math.round(i * px) + 0.5;
+      ctx.beginPath();
+      ctx.moveTo(0, y);
+      ctx.lineTo(W, y);
+      ctx.stroke();
+    }
+    // major rule every 4 cells
+    ctx.strokeStyle = C.gridStrong;
+    ctx.lineWidth = 0.7;
+    for (let i = 4; i < COLS; i += 4) {
+      const x = Math.round(i * px) + 0.5;
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x, H);
+      ctx.stroke();
+    }
+    for (let i = 4; i < ROWS; i += 4) {
+      const y = Math.round(i * px) + 0.5;
+      ctx.beginPath();
+      ctx.moveTo(0, y);
+      ctx.lineTo(W, y);
+      ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  function drawSnake(px) {
+    const N = state.snake.length;
+    for (let i = N - 1; i >= 0; i--) {
+      const s = state.snake[i];
+      const isHead = i === 0;
+      const x = s.x * px;
+      const y = s.y * px;
+      const inset = isHead ? 2 : 3;
+      const r = isHead ? 9 : 6;
+
+      // shadow
+      ctx.fillStyle = 'rgba(40, 25, 10, 0.20)';
+      roundRect(ctx, x + inset + 1, y + inset + 1.6, px - inset*2, px - inset*2, r);
+      ctx.fill();
+
+      // base vine fill
+      const gradFill = ctx.createLinearGradient(x, y, x + px, y + px);
+      if (isHead) {
+        gradFill.addColorStop(0, C.vineLight);
+        gradFill.addColorStop(1, C.vine);
+      } else {
+        // alternate slight color along body for vine segments
+        const t = (i % 2 === 0) ? 0 : 1;
+        gradFill.addColorStop(0, t ? C.vine : C.vineLight);
+        gradFill.addColorStop(1, t ? C.vineDeep : C.vine);
+      }
+      ctx.fillStyle = gradFill;
+      roundRect(ctx, x + inset, y + inset, px - inset*2, px - inset*2, r);
+      ctx.fill();
+
+      // inner highlight (chlorophyll sheen)
+      ctx.fillStyle = 'rgba(255, 245, 200, 0.10)';
+      roundRect(ctx, x + inset + 2, y + inset + 2, (px - inset*2) - 4, (px - inset*2) * 0.45, r * 0.7);
+      ctx.fill();
+
+      if (isHead) drawHeadAdornments(x, y, px);
+    }
+  }
+
+  function drawHeadAdornments(x, y, px) {
+    // Tiny leaf marker on the head, oriented to direction
+    const cx = x + px/2;
+    const cy = y + px/2;
+    const dir = state.dir;
+    const ang = Math.atan2(dir.y, dir.x);
+    const wig = Math.sin(state.headWiggle) * 0.05;
+
+    ctx.save();
+    ctx.translate(cx, cy);
+    ctx.rotate(ang + wig);
+
+    // eye dots (subtle)
+    ctx.fillStyle = C.bone;
+    ctx.beginPath();
+    ctx.arc(px * 0.12, -px * 0.13, 1.4, 0, Math.PI*2);
+    ctx.arc(px * 0.12,  px * 0.13, 1.4, 0, Math.PI*2);
+    ctx.fill();
+    ctx.fillStyle = C.vineDeep;
+    ctx.beginPath();
+    ctx.arc(px * 0.13, -px * 0.13, 0.7, 0, Math.PI*2);
+    ctx.arc(px * 0.13,  px * 0.13, 0.7, 0, Math.PI*2);
+    ctx.fill();
+
+    // Forward tendril leaf
+    ctx.fillStyle = C.leaf;
+    ctx.beginPath();
+    ctx.ellipse(px * 0.34, 0, px * 0.16, px * 0.07, 0, 0, Math.PI*2);
+    ctx.fill();
+    ctx.strokeStyle = C.vineDeep;
+    ctx.lineWidth = 0.6;
+    ctx.beginPath();
+    ctx.moveTo(px * 0.20, 0);
+    ctx.lineTo(px * 0.50, 0);
+    ctx.stroke();
+
+    ctx.restore();
+  }
+
+  function roundRect(ctx, x, y, w, h, r) {
+    r = Math.min(r, w/2, h/2);
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.lineTo(x + w - r, y);
+    ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+    ctx.lineTo(x + w, y + h - r);
+    ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+    ctx.lineTo(x + r, y + h);
+    ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+    ctx.lineTo(x, y + r);
+    ctx.quadraticCurveTo(x, y, x + r, y);
+    ctx.closePath();
+  }
+
+  function drawFood(food, px) {
+    const cx = food.x * px + px/2;
+    const cy = food.y * px + px/2;
+    const r  = px * 0.42;
+    // soft shadow
+    ctx.fillStyle = 'rgba(40, 25, 10, 0.12)';
+    ctx.beginPath();
+    ctx.ellipse(cx, cy + px*0.18, r * 0.6, r * 0.18, 0, 0, Math.PI*2);
+    ctx.fill();
+    food.species.draw(ctx, cx, cy, r);
+  }
+
+  function drawBloom(b, px) {
+    const cx = b.x * px + px/2;
+    const cy = b.y * px + px/2;
+    const t = b.age / 14;
+    const radius = px * 0.45 * (0.6 + t * 1.4);
+    const alpha = 0.55 * (1 - t);
+    ctx.save();
+    ctx.strokeStyle = `rgba(132, 42, 38, ${alpha})`;
+    ctx.lineWidth = 1.2;
+    ctx.beginPath();
+    ctx.arc(cx, cy, radius, 0, Math.PI*2);
+    ctx.stroke();
+    ctx.strokeStyle = `rgba(45, 74, 37, ${alpha * 0.6})`;
+    ctx.beginPath();
+    ctx.arc(cx, cy, radius * 0.6, 0, Math.PI*2);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  /* ─────────────────────────────────────────────────────────
+     Specimen drawings — used both on the board and in legend
+     ───────────────────────────────────────────────────────── */
+  function drawBerry(ctx, cx, cy, r) {
+    // stem & leaf above
+    ctx.strokeStyle = C.capDark;
+    ctx.lineWidth = 1.4;
+    ctx.beginPath();
+    ctx.moveTo(cx, cy - r * 0.55);
+    ctx.lineTo(cx, cy - r * 0.05);
+    ctx.stroke();
+    ctx.fillStyle = C.leaf;
+    ctx.beginPath();
+    ctx.ellipse(cx - r * 0.22, cy - r * 0.45, r * 0.22, r * 0.10, -0.6, 0, Math.PI*2);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.ellipse(cx + r * 0.22, cy - r * 0.45, r * 0.22, r * 0.10, 0.6, 0, Math.PI*2);
+    ctx.fill();
+    // berry body
+    ctx.fillStyle = C.berry;
+    ctx.beginPath();
+    ctx.arc(cx, cy + r * 0.10, r * 0.55, 0, Math.PI*2);
+    ctx.fill();
+    // shine
+    ctx.fillStyle = 'rgba(255,220,200,0.45)';
+    ctx.beginPath();
+    ctx.arc(cx - r * 0.18, cy - r * 0.05, r * 0.12, 0, Math.PI*2);
+    ctx.fill();
+    // outline
+    ctx.strokeStyle = C.berryDeep;
+    ctx.lineWidth = 0.8;
+    ctx.beginPath();
+    ctx.arc(cx, cy + r * 0.10, r * 0.55, 0, Math.PI*2);
+    ctx.stroke();
+  }
+
+  function drawMushroom(ctx, cx, cy, r) {
+    // stem
+    ctx.fillStyle = '#e8dcc4';
+    roundRect(ctx, cx - r * 0.18, cy - r * 0.05, r * 0.36, r * 0.65, r * 0.10);
+    ctx.fill();
+    ctx.strokeStyle = C.capDark;
+    ctx.lineWidth = 0.6;
+    ctx.stroke();
+    // cap (dome)
+    ctx.fillStyle = C.mush;
+    ctx.beginPath();
+    ctx.moveTo(cx - r * 0.65, cy - r * 0.02);
+    ctx.quadraticCurveTo(cx, cy - r * 0.85, cx + r * 0.65, cy - r * 0.02);
+    ctx.closePath();
+    ctx.fill();
+    ctx.strokeStyle = C.capDark;
+    ctx.lineWidth = 0.8;
+    ctx.stroke();
+    // dots
+    ctx.fillStyle = C.bone;
+    ctx.beginPath();
+    ctx.arc(cx - r * 0.22, cy - r * 0.30, r * 0.09, 0, Math.PI*2);
+    ctx.arc(cx + r * 0.10, cy - r * 0.45, r * 0.07, 0, Math.PI*2);
+    ctx.arc(cx + r * 0.30, cy - r * 0.16, r * 0.06, 0, Math.PI*2);
+    ctx.fill();
+  }
+
+  function drawLeaf(ctx, cx, cy, r) {
+    ctx.save();
+    ctx.translate(cx, cy);
+    ctx.rotate(-0.6);
+    // leaf body
+    ctx.fillStyle = C.leaf;
+    ctx.beginPath();
+    ctx.moveTo(-r * 0.7, 0);
+    ctx.quadraticCurveTo(0, -r * 0.55, r * 0.7, 0);
+    ctx.quadraticCurveTo(0, r * 0.55, -r * 0.7, 0);
+    ctx.closePath();
+    ctx.fill();
+    ctx.strokeStyle = C.vineDeep;
+    ctx.lineWidth = 0.8;
+    ctx.stroke();
+    // central vein
+    ctx.beginPath();
+    ctx.moveTo(-r * 0.6, 0);
+    ctx.lineTo(r * 0.6, 0);
+    ctx.stroke();
+    // side veins
+    ctx.lineWidth = 0.5;
+    for (let i = -2; i <= 2; i++) {
+      if (i === 0) continue;
+      const t = i * 0.18;
+      ctx.beginPath();
+      ctx.moveTo(t * r, 0);
+      ctx.lineTo(t * r + 0.18 * r, -r * 0.32 * (1 - Math.abs(t)));
+      ctx.moveTo(t * r, 0);
+      ctx.lineTo(t * r + 0.18 * r, r * 0.32 * (1 - Math.abs(t)));
+      ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  function drawAcorn(ctx, cx, cy, r) {
+    // body (oval)
+    ctx.fillStyle = C.tan;
+    ctx.beginPath();
+    ctx.ellipse(cx, cy + r * 0.15, r * 0.38, r * 0.5, 0, 0, Math.PI*2);
+    ctx.fill();
+    ctx.strokeStyle = C.capDark;
+    ctx.lineWidth = 0.6;
+    ctx.stroke();
+    // cap
+    ctx.fillStyle = C.capDark;
+    ctx.beginPath();
+    ctx.arc(cx, cy - r * 0.18, r * 0.46, Math.PI, Math.PI * 2);
+    ctx.fill();
+    // cap texture lines
+    ctx.strokeStyle = '#3a2818';
+    ctx.lineWidth = 0.4;
+    for (let i = -2; i <= 2; i++) {
+      ctx.beginPath();
+      ctx.moveTo(cx + i * r * 0.10, cy - r * 0.18);
+      ctx.lineTo(cx + i * r * 0.10, cy - r * 0.40);
+      ctx.stroke();
+    }
+    // stem
+    ctx.strokeStyle = C.capDark;
+    ctx.lineWidth = 1.4;
+    ctx.beginPath();
+    ctx.moveTo(cx, cy - r * 0.65);
+    ctx.lineTo(cx, cy - r * 0.45);
+    ctx.stroke();
+  }
+
+  function drawFlower(ctx, cx, cy, r) {
+    // 5 petals
+    for (let i = 0; i < 5; i++) {
+      const a = (i / 5) * Math.PI * 2 - Math.PI / 2;
+      ctx.save();
+      ctx.translate(cx + Math.cos(a) * r * 0.28, cy + Math.sin(a) * r * 0.28);
+      ctx.rotate(a + Math.PI / 2);
+      ctx.fillStyle = C.bloom;
+      ctx.beginPath();
+      ctx.ellipse(0, 0, r * 0.18, r * 0.32, 0, 0, Math.PI*2);
+      ctx.fill();
+      ctx.strokeStyle = C.bloomDeep;
+      ctx.lineWidth = 0.6;
+      ctx.stroke();
+      ctx.restore();
+    }
+    // center
+    ctx.fillStyle = C.berry;
+    ctx.beginPath();
+    ctx.arc(cx, cy, r * 0.18, 0, Math.PI*2);
+    ctx.fill();
+    ctx.strokeStyle = C.berryDeep;
+    ctx.lineWidth = 0.6;
+    ctx.stroke();
+    // tiny stamen specks
+    ctx.fillStyle = C.bloom;
+    for (let i = 0; i < 4; i++) {
+      const a = i * Math.PI / 2;
+      ctx.beginPath();
+      ctx.arc(cx + Math.cos(a) * r * 0.07, cy + Math.sin(a) * r * 0.07, 0.8, 0, Math.PI*2);
+      ctx.fill();
+    }
+  }
+
+  /* ─────────────────────────────────────────────────────────
+     Specimens legend (small)
+     ───────────────────────────────────────────────────────── */
+  function buildLegend() {
+    specLegend.innerHTML = '';
+    for (const sp of SPECIES) {
+      const row = document.createElement('div');
+      const c = document.createElement('canvas');
+      c.width = 44; c.height = 44;
+      const cctx = c.getContext('2d');
+      cctx.scale(2, 2);
+      sp.draw(cctx, 11, 11, 9);
+      const lbl = document.createElement('span');
+      lbl.textContent = sp.name;
+      row.appendChild(c);
+      row.appendChild(lbl);
+      specLegend.appendChild(row);
+    }
+  }
+
+  /* ─────────────────────────────────────────────────────────
+     Input
+     ───────────────────────────────────────────────────────── */
+  const KEYMAP = {
+    ArrowUp:    [0, -1], w: [0, -1], W: [0, -1],
+    ArrowDown:  [0,  1], s: [0,  1], S: [0,  1],
+    ArrowLeft:  [-1, 0], a: [-1, 0], A: [-1, 0],
+    ArrowRight: [1,  0], d: [1,  0], D: [1,  0],
+  };
+  function tryDir(dx, dy) {
+    // disallow direct reversal
+    if (dx === -state.dir.x && dy === -state.dir.y && state.snake.length > 1) return false;
+    state.nextDir = { x: dx, y: dy };
+    return true;
+  }
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === ' ' || e.code === 'Space') {
+      e.preventDefault();
+      if (state.gameOver) { reset(); return; }
+      if (!state.running && !state.paused) start();
+      else pauseToggle();
+      return;
+    }
+    if (e.key === 'r' || e.key === 'R') {
+      e.preventDefault();
+      reset();
+      return;
+    }
+    if (state.gameOver) return;
+    const k = KEYMAP[e.key];
+    if (!k) return;
+    e.preventDefault();
+    if (!state.running) {
+      // first directional input begins the study
+      const ok = tryDir(k[0], k[1]);
+      if (ok) start();
+    } else if (state.paused) {
+      // resume on direction input
+      if (tryDir(k[0], k[1])) pauseToggle();
+    } else {
+      tryDir(k[0], k[1]);
+    }
+  });
+
+  restartBtn.addEventListener('click', () => {
+    hideCard();
+    reset();
+  });
+
+  window.addEventListener('resize', () => { fitCanvas(); draw(); });
+
+  /* ─────────────────────────────────────────────────────────
+     Go
+     ───────────────────────────────────────────────────────── */
+  init();
+})();
+</script>
+</body>
+</html>
